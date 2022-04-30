@@ -1,0 +1,136 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+   {% block head %}
+   {% endblock head %}
+   
+    
+    <!-- css -->
+  {% load static %}
+  <title>Agri & Aqua</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />  
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+  <link href="{% static 'css/demo.min.css' %}" rel="stylesheet">
+  <script src="{% static 'js/scripts.js' %}"></script>
+
+{% comment %}   
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>          {% endcomment %}
+    
+</head>
+<body style="overflow:visible; color: black !important;" id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="77" onload="myFunction()">
+    <nav class="navbar navbar-light navbar-expand-md fixed-top" id="mainNav">
+        <div class="container"><a class="navbar-brand" href="/">Agriculture</a><button data-bs-toggle="collapse" class="navbar-toggler navbar-toggler-right" data-bs-target="#navbarResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" value="Menu"><i class="fa fa-bars"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item nav-link"><a class="nav-link active" href="http://127.0.0.1:8000/#provide">Provide</a></li>
+                    <li class="nav-item nav-link"><a class="nav-link" href="http://127.0.0.1:8000/#services">Services</a></li>
+                    <li class="nav-item nav-link"><a class="nav-link" href="http://127.0.0.1:8000/#contact">contact</a></li>
+                    
+                    
+                    
+                </ul>
+                <span class="navbar-nav actions"> 
+                    {% if user.is_authenticated %}
+                    <a class=" logout btn btn-danger" style="text-decoration: none;" href="{% url 'logout' %}">Log Out</a>
+                    {% else %}
+                    <a class="login  btn btn-primary" style="text-decoration: none; margin-right: 15px;" href="{% url 'login' %}">Log In</a>
+                    <br>
+                    <a class="btn btn-success action-button" style="text-decoration: none;" role="button" href="{% url 'signup' %}">Sign Up</a>
+                    {% endif %}
+                </span>
+                             
+                    
+
+                    
+                    
+                   
+            </div>
+        </div>
+    </nav>
+
+    <div class="custom col-md-12 col-lg-0"  >
+        <div class="">
+        <div id="logo">
+    <div class="row text-center py-4" style="background:white;">
+    <div class="col-12  mx-auto"><a> <img class="img-fluid" style="width:50px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReTfcnOOixZEuDOMRw99Ud8eK9gm0RWhyaTw__XerH1zEGNL7XA3IHqEpx4DxsbPFB-s0&usqp=CAU" alt="Logo" /> Agriculture & Aquaculture</a></div>
+    </div>
+    </div>    </div>
+    </div>
+
+
+        <!-- navigation -->
+        <div id="sticky-position" class="display: hidden;"></div>
+        <div id="navigation" class="container-fluid sticky-top" style="background-color: white;">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="container navbar navbar-expand-lg navbar-light pb-3 "  id="main_menu">
+
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                          </button>
+            <div class="collapse navbar-collapse mx-auto " id="navbarCollapse">
+
+                <ul class="navbar-nav mod-list w-100 nav-fill ">
+
+                    <li class="nav-item item-101 default current active fullwidth"><a class="nav-link" href="/" data-toggle="">Home</a></li><li class="nav-item item-335 divider deeper dropdown parent"><a class="nav-link" href="/shopping" data-toggle="dropdown">Products</a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="nav-link" href="/product/" data-toggle="">Farm Management Software</a><a class="nav-link" href="/product/cultivation-management-software.html" data-toggle="">Cultivation Management Software</a><a class="nav-link" href="/product/orchard-management-software.html" data-toggle="">Orchard Management Software</a><a href="/product/farm-management-software/brochure-download.html" class="nav-link nav-link">Brochure</a><a class="nav-link" href="/product/harvest-quality-vision.html" data-toggle="">Harvest Quality Vision™</a><a class="nav-link" href="/product/rfid-integration.html" data-toggle="">RFID Integration</a><a class="nav-link" href="/product/farm-management-apps.html" data-toggle="">Farm Management Apps</a><a class="nav-link" href="/product/quality-control.html" data-toggle="">Quality Control</a><a class="nav-link" href="/product/crop-load-vision.html" data-toggle="">Crop Load Vision</a><a class="nav-link" href="/product/predictive-packout-toolkit.html" data-toggle="">Predictive Packout Toolkit</a></div></li></li><li class="nav-item item-912 divider deeper dropdown parent"><a class="nav-link" href="/contact" data-toggle="dropdown">Support</a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="nav-link" href="/support/support-and-training.html" data-toggle="">Support &amp; Training</a><a class="nav-link" href="/support/croptracker-how-to-videos.html" data-toggle="">Croptracker How-To Videos</a></div></li></li><li class="nav-item item-860 deeper dropdown parent"><a class="nav-link" href="/services/weather" data-toggle="dropdown">Weather</a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="nav-link" href="/resources/farm-management-software-resources.html" data-toggle="">Farm Management Software Resources</a><a class="nav-link" href="/resources/covid-19-resources-for-growers.html" data-toggle="">COVID-19 Resources for Growers</a><a class="nav-link" href="/resources/farm-management.html" data-toggle="">Farm Management</a><a class="nav-link" href="/resources/integrated-farm-management.html" data-toggle="">Integrated Farm Management</a><a class="nav-link" href="/resources/crop-production-software.html" data-toggle="">Crop Production Software</a><a class="nav-link" href="/resources/traceability-in-agriculture.html" data-toggle="">Traceability in Agriculture</a><a class="nav-link" href="/resources/on-farm-weather-equipment.html" data-toggle="">On Farm Weather Equipment</a><a class="nav-link" href="/resources/spray-record-templates.html" data-toggle="">Spray Record Templates</a><a class="nav-link" href="/resources/piece-rate-calculation.html" data-toggle="">Piece Rate Calculation</a><a class="nav-link" href="/resources/farm-record-keeping.html" data-toggle="">Farm Record Keeping</a><a class="nav-link" href="/resources/apps-for-farmers.html" data-toggle="">Apps for Farmers</a></div></li></li><li class="nav-item item-285"><a class="nav-link" href="/drone" data-toggle="">Blog</a></li>       </ul>
+            </div>
+            </nav>
+            </div>
+         </div>
+    </div>
+
+<!-- Loader -->
+
+<div id="loader" class="loader">
+    <div class="spinner yellow"></div>
+    <div class="spinner orange"></div>
+    <div class="spinner red"></div>
+    <div class="spinner pink"></div>
+    <div class="spinner violet"></div>
+    <div class="spinner mauve"></div>
+    <div class="spinner light-yellow"></div>
+  </div>
+
+  
+<div style="display:none;" id="myDiv" class="animate-bottom">
+
+  {% block content %}
+  {% endblock %} 
+
+   <!--Footer-->
+
+<footer class="footer-clean">
+
+  <div class="container text-center">
+    <p>Copyright ©&nbsp;Agriculture 2022</p>
+  </div>
+  </footer>
+
+
+
+</div>
+
+
+
+
+
+
+    
+   
+
+</div>
+
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/grayscale.js' %}"></script>
+{% comment %} <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script> {% endcomment %}
+
+
+</body>
+</html>
